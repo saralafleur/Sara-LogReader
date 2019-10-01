@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>(c) 2019, Sara LaFleur</Copyright>
+    <Version>5.0.0</Version>
+    <Authors>Sara LaFleur</Authors>
+    <Company>Sara</Company>
+  </PropertyGroup>
+
+</Project>

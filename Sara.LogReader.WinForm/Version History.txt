@@ -1,0 +1,50 @@
+﻿Terms
+-----
+A Log contains a set of lines
+A line is an entry in the log followed by a carraige return
+A Pattern is a line in the log that is defined by a unique Regular Expression
+A Value is a string in the line that is defined by a unique Regular Expression
+A Recipe is a collection of Patterns and Lines and Attributes
+A Recipe Entry can be a Pattern or Value
+A Recipe Entry Attribute is a business rule applied to a Recipe Entry
+A Anomally is when a Recipe Entry does not adhere to the established business rules
+The Sock Drawer is a collection of Log Files
+The Sock Drawer File Info is a summary view of the Log
+A Category is used to group Patterns and Values
+The Filter is used to limit what is viewed in the Log
+The Class Field is the code Class that generated the Log Line
+The Method Field is the code Method within a Code Class that generated the Log Line
+The Network Field is the Network Message that generated the Log Line
+The Document Helper is used to display a unique list of Log Line's that do not have a Pattern
+The Property is a detailed view of the Log Line and supporting Documentation
+
+1.5.0.0
+	- Stablized overall system and addressed performance issues.
+	- A Pattern can display in the Document Map the time difference from the parent node.
+	- Patterns and Values support Document Map Level
+	- From the main menu you can clear the cache
+2.0.0.0
+	- Recipes were added
+
+Categories: NEW, FIX, UPDATE
+
+3.1.0.0 (Start 7/21/2016, End ??/??/????)
+	- PRIVATE
+		- FIX : Race Condition when a Document is opened, the Render would call Invoke, however the Document was not fully 
+	            created, thus a 'Object is Disposed' Exception was raised.  Moved Render to the 'Shown' event to resolve the Race Condition.
+	- PUBLIC 
+		- FIX : DockPanel.config corruption.  To resolve the system will automatically restore the file to system defaults.
+		- FIX : When you close a file the Sock Drawer File Tree View is Rendered, causing the File Tree View to collaspe.
+		- FIX : When you navigate between documents the Sock Drawer File Tree View is Rendered, causing the File Tree View to collaspe.
+		- UPDATE : Within the Patterns window, changed 'SourceTypeToString' to 'Source Filter', changed 'SourceType' to 'Source Type'
+		- [ ] NEW : Sara.LogReader can now be installed via a Windows Installer (MSI).
+		- [ ] NEW : Notifications alert the User of any anomaly that occurs while using the system.
+		- [ ] NEW : You can now cancel a Sock Drawer Update.
+4.0.0.0
+	- UPDATE changed the word 'Pattern' to 'Event'
+4.2.1.0 
+	- Hide MainMenu on startup
+	- Hide Current Line Bar on startup
+	- Changed Status Panel to thiner boarder
+	- Changed Status Panel to always have at least a border of 5 pixels when the parent window has a smaller width then the status panel
+

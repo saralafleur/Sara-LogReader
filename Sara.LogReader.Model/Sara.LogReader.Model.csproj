@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E1EE99C-55F1-4C14-B585-57039E875187}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sara.LogReader.Model</RootNamespace>
+    <AssemblyName>Sara.LogReader.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories\CategoriesModel.cs" />
+    <Compile Include="Categories\Category.cs" />
+    <Compile Include="Categories\CategoryCacheData.cs" />
+    <Compile Include="Categories\CategoryModel.cs" />
+    <Compile Include="ColorScheme\ColorSchemeLogReaderModal.cs" />
+    <Compile Include="DataPath.cs" />
+    <Compile Include="DocumentMap\DocumentEntry.cs" />
+    <Compile Include="EventNS\EventLR.cs" />
+    <Compile Include="EventNS\EventCacheData.cs" />
+    <Compile Include="EventNS\EventLookupValue.cs" />
+    <Compile Include="EventNS\EventLookupValueCondition.cs" />
+    <Compile Include="EventNS\EventLookupValueConditionModel.cs" />
+    <Compile Include="EventNS\EventLookupValueCriteria.cs" />
+    <Compile Include="EventNS\EventLookupValueCriteriaModel.cs" />
+    <Compile Include="EventNS\EventLookupValueModel.cs" />
+    <Compile Include="EventNS\EventLookupValueNameModel.cs" />
+    <Compile Include="EventNS\EventModel.cs" />
+    <Compile Include="EventNS\EventPerformanceResult.cs" />
+    <Compile Include="EventNS\EventValue.cs" />
+    <Compile Include="EventNS\EventValueModel.cs" />
+    <Compile Include="EventNS\FoldingPattern.cs" />
+    <Compile Include="EventNS\LookupDirection.cs" />
+    <Compile Include="FileNS\Customer.cs" />
+    <Compile Include="FileNS\FavoriteFile.cs" />
+    <Compile Include="FileNS\FavoriteFileCache.cs" />
+    <Compile Include="FileNS\FileData.cs" />
+    <Compile Include="FileNS\FileBusinessLogic.cs" />
+    <Compile Include="FileNS\FileCache.cs" />
+    <Compile Include="FileNS\FileNetwork.cs" />
+    <Compile Include="FileNS\Node.cs" />
+    <Compile Include="FileNS\SockDrawerModel.cs" />
+    <Compile Include="FileNS\ValueBookMark.cs" />
+    <Compile Include="Filter\FilterModel.cs" />
+    <Compile Include="HideOptionNS\HideOption.cs" />
+    <Compile Include="HideOptionNS\HideOptionCacheData.cs" />
+    <Compile Include="HideOptionNS\HideOptionModel.cs" />
+    <Compile Include="HideOptionNS\HideOptionsModel.cs" />
+    <Compile Include="IDE\IDEModel.cs" />
+    <Compile Include="IDE\IMonitorScriptIDE.cs" />
+    <Compile Include="IDE\IPatternTestResult.cs" />
+    <Compile Include="IDE\PatternTestResults.cs" />
+    <Compile Include="LogReaderNS\CachedSourceType.cs" />
+    <Compile Include="LogReaderNS\CheckedItem.cs" />
+    <Compile Include="LogReaderNS\DocumentModel.cs" />
+    <Compile Include="LogReaderNS\LogModel.cs" />
+    <Compile Include="LogReaderNS\OptionsCacheData.cs" />
+    <Compile Include="LogReaderNS\SettingsCacheData.cs" />
+    <Compile Include="NetworkMapNS\NetworkMapFile.cs" />
+    <Compile Include="NetworkMapNS\NetworkMapModel.cs" />
+    <Compile Include="NetworkMapNS\NetworkMapOptions.cs" />
+    <Compile Include="NetworkMapping\CriteriaMatch.cs" />
+    <Compile Include="NetworkMapping\CriteriaMatchModel.cs" />
+    <Compile Include="NetworkMapping\LineArgs.cs" />
+    <Compile Include="NetworkMapping\NetworkMap.cs" />
+    <Compile Include="NetworkMapping\NetworkMapCacheData.cs" />
+    <Compile Include="NetworkMapping\NetworkMapCriteriaModel.cs" />
+    <Compile Include="NetworkMapping\NetworkMapFile.cs" />
+    <Compile Include="NetworkMapping\NetworkMapModel.cs" />
+    <Compile Include="NetworkMapping\NetworkMessageInfoModel.cs" />
+    <Compile Include="NetworkMapping\Property.cs" />
+    <Compile Include="NetworkReport\NetworkReportItem.cs" />
+    <Compile Include="NetworkReport\NetworkReportModel.cs" />
+    <Compile Include="NetworkReport\NetworkReportResultCacheData.cs" />
+    <Compile Include="NetworkReport\NetworkReportSelectionModel.cs" />
+    <Compile Include="NetworkReport\NetworkReportSummary.cs" />
+    <Compile Include="PatternNS\EventPattern.cs" />
+    <Compile Include="PatternNS\FileSelectionModel.cs" />
+    <Compile Include="PatternNS\FileTreeNode.cs" />
+    <Compile Include="PatternNS\IEventOption.cs" />
+    <Compile Include="PatternNS\IPattern.cs" />
+    <Compile Include="PatternNS\Pattern.cs" />
+    <Compile Include="PatternNS\PatternCacheData.cs" />
+    <Compile Include="PatternNS\PatternModel.cs" />
+    <Compile Include="PatternNS\PatternOptions.cs" />
+    <Compile Include="PatternNS\PatternsModel.cs" />
+    <Compile Include="PatternNS\RecipeAnomaly.cs" />
+    <Compile Include="PatternNS\RecipeColumn.cs" />
+    <Compile Include="PatternNS\RecipeSelection.cs" />
+    <Compile Include="PatternNS\ScanLineArgs.cs" />
+    <Compile Include="PatternNS\Step.cs" />
+    <Compile Include="PatternNS\StepModel.cs" />
+    <Compile Include="Performance\PerformanceCacheData.cs" />
+    <Compile Include="Performance\PerformanceEvent.cs" />
+    <Compile Include="Performance\PerformanceModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\DynamicObjectType.cs" />
+    <Compile Include="Property\LogPropertyModel.cs" />
+    <Compile Include="RecipeReport\RecipeFileKey.cs" />
+    <Compile Include="RecipeReport\RecipeReportItem.cs" />
+    <Compile Include="RecipeReport\RecipeReportModel.cs" />
+    <Compile Include="RecipeReport\RecipeReportResultCacheData.cs" />
+    <Compile Include="RecipeReport\RecipeReportSelectionModel.cs" />
+    <Compile Include="ResearchNS\Research.cs" />
+    <Compile Include="ResearchNS\ResearchCacheData.cs" />
+    <Compile Include="ResearchNS\ResearchModel.cs" />
+    <Compile Include="Settings\SettingsModel.cs" />
+    <Compile Include="SockDrawer\StatusDetail.cs" />
+    <Compile Include="SockDrawer\TreeViewFile.cs" />
+    <Compile Include="Source Info\SourceInfoModel.cs" />
+    <Compile Include="Storage\CacheModel.cs" />
+    <Compile Include="Storage\DataModel.cs" />
+    <Compile Include="ValueNS\Value.cs" />
+    <Compile Include="ValueNS\ValueCacheData.cs" />
+    <Compile Include="ValueNS\ValueModel.cs" />
+    <Compile Include="XmlDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sara.LogReader.Common\Sara.LogReader.Common.csproj">
+      <Project>{d3878408-9415-4c84-8a81-4a7c69fd641c}</Project>
+      <Name>Sara.LogReader.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sara-Cache">
+      <Version>1.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Sara-WinForm">
+      <Version>1.2.9.5</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

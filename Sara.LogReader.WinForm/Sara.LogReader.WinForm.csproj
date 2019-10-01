@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E91D27C6-D805-43D6-8ACE-E27D8F5B89AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sara.LogReader.WinForm</RootNamespace>
+    <AssemblyName>Sara.LogReader.WinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\MonitorScriptIDE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MonitorScriptIDE.Designer.cs">
+      <DependentUpon>MonitorScriptIDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SourceInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SourceInfo.Designer.cs">
+      <DependentUpon>SourceInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customization\DockHelper.cs" />
+    <Compile Include="Customization\InertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Customization\Resources.Designer.cs" />
+    <Compile Include="Customization\Strings.Designer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI Common\TreeViewService.cs" />
+    <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\DocumentHelperViewModel.cs" />
+    <Compile Include="ViewModel\DocumentMapViewModel.cs" />
+    <Compile Include="ViewModel\DocumentViewModel.cs" />
+    <Compile Include="ViewModel\EventPerformanceTestViewModel.cs" />
+    <Compile Include="ViewModel\EventViewModel.cs" />
+    <Compile Include="ViewModel\FilterViewModel.cs" />
+    <Compile Include="ViewModel\HideOptionViewModel.cs" />
+    <Compile Include="ViewModel\IMainView.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MonitorScriptIDEViewModel.cs" />
+    <Compile Include="ViewModel\NetworkMapingViewModel.cs" />
+    <Compile Include="ViewModel\NetworkMapViewModel.cs" />
+    <Compile Include="ViewModel\NetworkReportViewModel.cs" />
+    <Compile Include="ViewModel\OutputViewModel.cs" />
+    <Compile Include="ViewModel\PatternViewModel.cs" />
+    <Compile Include="ViewModel\PerformanceViewModel.cs" />
+    <Compile Include="ViewModel\PropertyViewModel.cs" />
+    <Compile Include="ViewModel\RecipeReportViewModel.cs" />
+    <Compile Include="ViewModel\RegularExpressionHideTesterViewModel.cs" />
+    <Compile Include="ViewModel\RegularExpressionTesterViewModel.cs" />
+    <Compile Include="ViewModel\ResearchViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\SockDrawerViewModel.cs" />
+    <Compile Include="ViewModel\SourceInfoViewModel.cs" />
+    <Compile Include="ViewModel\ValueViewModel.cs" />
+    <Compile Include="Views\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categories\AddEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categories\AddEditCategory.Designer.cs">
+      <DependentUpon>AddEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categories\CategoryWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Categories\CategoryWindow.Designer.cs">
+      <DependentUpon>CategoryWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentHelper\DocumentHelperWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentHelper\DocumentHelperWindow.Designer.cs">
+      <DependentUpon>DocumentHelperWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentMap\DocumentMapWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DocumentMap\DocumentMapWindow.Designer.cs">
+      <DependentUpon>DocumentMapWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\DocumentControl.cs" />
+    <Compile Include="Views\Document\DocumentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Document\DocumentWindow.Designer.cs">
+      <DependentUpon>DocumentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventPerformanceTest\EventPerformanceTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EventPerformanceTest\EventPerformanceTest.designer.cs">
+      <DependentUpon>EventPerformanceTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueConditionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueConditionView.Designer.cs">
+      <DependentUpon>AddEditEventLookupValueConditionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueCriteriaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueCriteriaView.Designer.cs">
+      <DependentUpon>AddEditEventLookupValueCriteriaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueValueFieldView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueValueFieldView.Designer.cs">
+      <DependentUpon>AddEditEventLookupValueValueFieldView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventLookupValueView.Designer.cs">
+      <DependentUpon>AddEditEventLookupValueView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventValueView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventValueView.Designer.cs">
+      <DependentUpon>AddEditEventValueView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\AddEditEventView.Designer.cs">
+      <DependentUpon>AddEditEventView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Events\EventView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Events\EventView.Designer.cs">
+      <DependentUpon>EventView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Filter\FilterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Filter\FilterWindow.Designer.cs">
+      <DependentUpon>FilterWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkMapNS\NetworkMapView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkMapNS\NetworkMapView.Designer.cs">
+      <DependentUpon>NetworkMapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\AddEditNetworkMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\AddEditNetworkMap.Designer.cs">
+      <DependentUpon>AddEditNetworkMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\AddEditNetworkMapCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\AddEditNetworkMapCriteria.Designer.cs">
+      <DependentUpon>AddEditNetworkMapCriteria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\NetworkMappinigWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkMapping\NetworkMappinigWindow.Designer.cs">
+      <DependentUpon>NetworkMappinigWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkReport\NetworkReportSelectionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkReport\NetworkReportSelectionView.Designer.cs">
+      <DependentUpon>NetworkReportSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkReport\NetworkReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkReport\NetworkReportView.Designer.cs">
+      <DependentUpon>NetworkReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NetworkReport\RenameView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NetworkReport\RenameView.Designer.cs">
+      <DependentUpon>RenameView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Output\OutputView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Output\OutputView.Designer.cs">
+      <DependentUpon>OutputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patterns\AddEditPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patterns\AddEditPattern.Designer.cs">
+      <DependentUpon>AddEditPattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patterns\FileSelectionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patterns\FileSelectionView.Designer.cs">
+      <DependentUpon>FileSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patterns\PatternView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Patterns\PatternView.Designer.cs">
+      <DependentUpon>PatternView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Patterns\StopWatch.cs" />
+    <Compile Include="Views\Performance\PerformanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Performance\PerformanceView.Designer.cs">
+      <DependentUpon>PerformanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Property\PropertyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Property\PropertyWindow.Designer.cs">
+      <DependentUpon>PropertyWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipeReport\RecipeReportSelectionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RecipeReport\RecipeReportSelectionView.Designer.cs">
+      <DependentUpon>RecipeReportSelectionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RecipeReport\RecipeReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\RecipeReport\RecipeReportView.Designer.cs">
+      <DependentUpon>RecipeReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Research\AddEditResearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Research\AddEditResearch.Designer.cs">
+      <DependentUpon>AddEditResearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Research\ResearchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Research\ResearchWindow.Designer.cs">
+      <DependentUpon>ResearchWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsWindow.Designer.cs">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SockDrawer\SockDrawerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SockDrawer\SockDrawerWindow.Designer.cs">
+      <DependentUpon>SockDrawerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Source Info\SourceInfoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Source Info\SourceInfoView.Designer.cs">
+      <DependentUpon>SourceInfoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolWindows\RegularExpressionTest.cs" />
+    <Compile Include="Views\ToolWindows\RegularExpressionTesterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ToolWindows\RegularExpressionTesterWindow.Designer.cs">
+      <DependentUpon>RegularExpressionTesterWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolWindows\RegularExpressionTransfromTesterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ToolWindows\RegularExpressionTransfromTesterWindow.Designer.cs">
+      <DependentUpon>RegularExpressionTransfromTesterWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolWindows\ToolWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ToolWindows\ToolWindow.Designer.cs">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transform\AddEditTransfrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Transform\AddEditTransfrom.Designer.cs">
+      <DependentUpon>AddEditTransfrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transform\TransformWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Transform\TransformWindow.Designer.cs">
+      <DependentUpon>TransformWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Values\AddEditValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Values\AddEditValue.Designer.cs">
+      <DependentUpon>AddEditValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Values\ValuesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Values\ValuesWindow.Designer.cs">
+      <DependentUpon>ValuesWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\MonitorScriptIDE.resx">
+      <DependentUpon>MonitorScriptIDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SourceInfo.resx">
+      <DependentUpon>SourceInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customization\Resources.resx" />
+    <EmbeddedResource Include="Customization\Strings.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categories\AddEditCategory.resx">
+      <DependentUpon>AddEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Categories\CategoryWindow.resx">
+      <DependentUpon>CategoryWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DocumentHelper\DocumentHelperWindow.resx">
+      <DependentUpon>DocumentHelperWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DocumentMap\DocumentMapWindow.resx">
+      <DependentUpon>DocumentMapWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Document\DocumentWindow.resx">
+      <DependentUpon>DocumentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EventPerformanceTest\EventPerformanceTest.resx">
+      <DependentUpon>EventPerformanceTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventLookupValueConditionView.resx">
+      <DependentUpon>AddEditEventLookupValueConditionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventLookupValueCriteriaView.resx">
+      <DependentUpon>AddEditEventLookupValueCriteriaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventLookupValueValueFieldView.resx">
+      <DependentUpon>AddEditEventLookupValueValueFieldView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventLookupValueView.resx">
+      <DependentUpon>AddEditEventLookupValueView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventValueView.resx">
+      <DependentUpon>AddEditEventValueView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\AddEditEventView.resx">
+      <DependentUpon>AddEditEventView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Events\EventView.resx">
+      <DependentUpon>EventView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Filter\FilterWindow.resx">
+      <DependentUpon>FilterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkMapNS\NetworkMapView.resx">
+      <DependentUpon>NetworkMapView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkMapping\AddEditNetworkMap.resx">
+      <DependentUpon>AddEditNetworkMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkMapping\AddEditNetworkMapCriteria.resx">
+      <DependentUpon>AddEditNetworkMapCriteria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkMapping\NetworkMappinigWindow.resx">
+      <DependentUpon>NetworkMappinigWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkReport\NetworkReportSelectionView.resx">
+      <DependentUpon>NetworkReportSelectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkReport\NetworkReportView.resx">
+      <DependentUpon>NetworkReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NetworkReport\RenameView.resx">
+      <DependentUpon>RenameView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Output\OutputView.resx">
+      <DependentUpon>OutputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patterns\AddEditPattern.resx">
+      <DependentUpon>AddEditPattern.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patterns\FileSelectionView.resx">
+      <DependentUpon>FileSelectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Patterns\PatternView.resx">
+      <DependentUpon>PatternView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Performance\PerformanceView.resx">
+      <DependentUpon>PerformanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Property\PropertyWindow.resx">
+      <DependentUpon>PropertyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RecipeReport\RecipeReportSelectionView.resx">
+      <DependentUpon>RecipeReportSelectionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\RecipeReport\RecipeReportView.resx">
+      <DependentUpon>RecipeReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Research\AddEditResearch.resx">
+      <DependentUpon>AddEditResearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Research\ResearchWindow.resx">
+      <DependentUpon>ResearchWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Settings\SettingsWindow.resx">
+      <DependentUpon>SettingsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SockDrawer\SockDrawerWindow.resx">
+      <DependentUpon>SockDrawerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Source Info\SourceInfoView.resx">
+      <DependentUpon>SourceInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ToolWindows\RegularExpressionTesterWindow.resx">
+      <DependentUpon>RegularExpressionTesterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ToolWindows\RegularExpressionTransfromTesterWindow.resx">
+      <DependentUpon>RegularExpressionTransfromTesterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ToolWindows\ToolWindow.resx">
+      <DependentUpon>ToolWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Transform\AddEditTransfrom.resx">
+      <DependentUpon>AddEditTransfrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Transform\TransformWindow.resx">
+      <DependentUpon>TransformWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Values\AddEditValue.resx">
+      <DependentUpon>AddEditValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Values\ValuesWindow.resx">
+      <DependentUpon>ValuesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_Bottom.bmp" />
+    <Content Include="Customization\Resources\Dockindicator_PaneDiamond_Fill.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_Hotspot.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_HotspotIndex.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_Left.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_Right.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PaneDiamond_Top.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelBottom.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelBottom_Active.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelFill.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelFill_Active.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelLeft.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelLeft_Active.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelRight.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelRight_Active.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelTop.bmp" />
+    <Content Include="Customization\Resources\DockIndicator_PanelTop_Active.bmp" />
+    <Content Include="Customization\Resources\DockPaneCaption_AutoHideNo.bmp" />
+    <Content Include="Customization\Resources\DockPaneCaption_AutoHideYes.bmp" />
+    <Content Include="Customization\Resources\DockPaneCaption_CloseDisabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneCaption_CloseEnabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_CloseDisabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_CloseEnabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_ScrollLeftDisabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_ScrollLeftEnabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_ScrollRightDisabled.bmp" />
+    <Content Include="Customization\Resources\DockPaneStrip_ScrollRightEnabled.bmp" />
+    <Content Include="Feature Overview.txt" />
+    <Content Include="Images\Analytics.ico" />
+    <Content Include="Images\ArrowDown.bmp" />
+    <Content Include="Images\ArrowUp.bmp" />
+    <Content Include="Images\Bitmap.ico" />
+    <Content Include="Images\BlankIcon.ico" />
+    <Content Include="Images\ClosedFolder.ICO" />
+    <Content Include="Images\CollaspeAll.gif" />
+    <Content Include="Images\CSFile.ico" />
+    <Content Include="Images\CSProject.ico" />
+    <Content Include="Images\ExpandAll.gif" />
+    <Content Include="Images\File.ico" />
+    <Content Include="Images\Form.ico" />
+    <Content Include="Images\Menu.jpg" />
+    <Content Include="Images\Mouse.bmp" />
+    <Content Include="Images\msenv22.ico" />
+    <Content Include="Images\New.ico" />
+    <Content Include="Images\Open.ico" />
+    <Content Include="Images\OpenFolder.ICO" />
+    <Content Include="Images\OutputWindow.ico" />
+    <Content Include="Images\PropertyWindow.ico" />
+    <Content Include="Images\Reference.ico" />
+    <Content Include="Images\References.ico" />
+    <Content Include="Images\SolutionExplorer.ico" />
+    <Content Include="Images\TaskListWindow.ico" />
+    <Content Include="Images\ToolboxWindow.ico" />
+    <Content Include="Images\XmlFile.ico" />
+    <Content Include="Resources\DockPanel.xml" />
+    <Content Include="Resources\log-icon.ico" />
+    <Content Include="Version History.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sara-dockpanelsuite\WinFormsUI\WinFormsUI.csproj">
+      <Project>{c75532c4-765b-418e-b09b-46d36b2abdb1}</Project>
+      <Name>WinFormsUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sara.LogReader.Common\Sara.LogReader.Common.csproj">
+      <Project>{D3878408-9415-4C84-8A81-4A7C69FD641C}</Project>
+      <Name>Sara.LogReader.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sara.LogReader.Model\Sara.LogReader.Model.csproj">
+      <Project>{5E1EE99C-55F1-4C14-B585-57039E875187}</Project>
+      <Name>Sara.LogReader.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sara.LogReader.Service\Sara.LogReader.Service.csproj">
+      <Project>{F398FCA4-01C6-4733-AB5A-7F6697E24227}</Project>
+      <Name>Sara.LogReader.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Sara-Cache">
+      <Version>1.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Sara-FCTB">
+      <Version>2.16.26.105</Version>
+    </PackageReference>
+    <PackageReference Include="Sara-MonitorScript">
+      <Version>1.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="Sara-WinForm">
+      <Version>1.2.9.5</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
